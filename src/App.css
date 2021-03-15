@@ -1,11 +1,18 @@
 body{
   /* background-color:  #59253A; */
-  background-image:url('./assets/anime-manga-anime-girls-computer-wallpaper-preview.jpg');
+  font-family: "ALK Life", sans-serif;
+  background-color: white;
+  margin: 0px;
+  background-image:url('https://cdn.dribbble.com/users/1055435/screenshots/5714265/lightbulb-desk.gif');
   background-repeat: no-repeat;
-  background-position-y: bottom;
   background-size: 50%;
-  background-color: rgb(226, 218, 219);
+  background-position-x: right;
+  background-position-y: bottom;
   /* background-image: linear-gradient(to bottom, rgba(266, 173, 181, 0.2), rgba(266, 173, 181, 0.7)); */
+}
+
+.App{
+  
 }
 /* 
 body{

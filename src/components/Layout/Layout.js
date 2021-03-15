@@ -1,29 +1,22 @@
 import React from 'react';
-import './Layout.css';
+import  {NavLink} from 'react-router-dom'
+import classes from './Layout.module.css';
 
-const nav = () => {
+const layout = (props) => {
     return (
-        <div>
-            <nav>
-                <div className='nav-items'>
-                    <span>რეგისტრაცია</span>
-                    <span>შესვლა</span>
-                </div>
-            </nav>
-            <div className='signup'>
-                <input type='text' placeholder='სახელი, გვარი' />
-                <input type='text' placeholder='პაროლი' />
-                <input type='text' placeholder='Enter your name' />
-                <input type='text' placeholder='Enter your password' />
-                <button className='button'>რეგისტრაცია</button>
-                <button className='button'>Sign Up</button>
-            </div>
-            {/* <div className='Signin'>
-
-            </div> */}
+        <div className={classes.layout}>
+            <header>
+                <nav className={classes.navItems}>
+                    <NavLink to='/signup' className={classes.navLink}>რეგისტრაცია</NavLink>
+                    <NavLink to='/' className={classes.navLink}>შესვლა</NavLink>
+                </nav>
+            </header>
+            <div className={classes.content}>
+                {props.children}
+            </div>           
         </div>
 
     )
 }
 
-export default nav;
+export default layout;

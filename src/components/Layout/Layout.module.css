@@ -1,0 +1,36 @@
+header{
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 16px;
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    flex-direction:row;
+    margin: 0px;
+    background-color: #101357;
+    box-sizing: border-box;
+    color: white;
+    font-family: "BPG Glaho", sans-serif;
+}
+
+nav{
+    margin-left: auto;
+    margin-right: 4rem;
+    padding:1rem;
+}
+.navLink{
+    margin: 5px 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.navLink:hover{
+    cursor: pointer;
+    color: teal;
+}
+
+.content{
+    width: 100%;
+    
+}
+
+   

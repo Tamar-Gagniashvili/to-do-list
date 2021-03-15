@@ -1,31 +1,4 @@
-nav{
-    font-family: 'Akaya Telivigala', cursive;
-    font-size: 16px;
-    width: 100%;
-    height: 7vh;
-    display: flex;
-    flex-direction:row;
-    margin: 0px;
-    background-color: #101357;
-    box-sizing: border-box;
-    border-radius: 5px;
-    color: white;
-}
-
-.nav-items{
-    margin-left: auto;
-    margin-right: 4rem;
-    padding:1rem;
-}
-.nav-items span{
-    margin: 5px 10px;
-}
-
-.nav-items span:hover{
-    cursor: pointer;
-}
-
-.signup{
+.auth{
     width: 20rem;
     height: 25rem;
     margin: 6rem auto;
@@ -39,7 +12,7 @@ nav{
     color: white;
 }
 
-.signup input{
+.auth input{
     width: 15rem;
     display: block;
     padding: 10px;

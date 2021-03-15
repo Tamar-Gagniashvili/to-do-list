@@ -1,10 +1,23 @@
+import {Switch, Route, Redirect} from 'react-router'
+
 import './App.css';
-import Nav from './components/Layout/Layout'
+import Layout from './components/Layout/Layout'
+import Signin from './components/Auth/Signin'
+import Signup from './components/Auth/Signup';
+import Main from './components/MainPage/Main'
+import 'alk-life'
 
 function App() {
   return (
     <div className="App">
-        <Nav />
+        <Layout>
+          <Switch>
+            {/* <Route path='/' exact component={Signin}/>
+            <Route path='/signup' component={Signup}/>*/}
+            <Redirect to='/' /> 
+            <Route path='/' exact component={Main} />
+          </Switch>
+        </Layout>
     </div>
   );
 }
