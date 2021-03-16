@@ -1,0 +1,149 @@
+.main{
+    height: 87vh;
+    width: 100%;
+    padding-top: 3rem;
+    background-image: url('https://i.pinimg.com/originals/18/a4/94/18a4949fc9c8067172d3b96e302e7097.gif');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position-y: 0rem;
+    background-position-x:right;
+    background-color: #37375e;
+    /* background-color: #0c1052c9; */
+}
+
+h1{
+    margin: 0px;
+}
+
+.contentWrapper{
+    width: 600px;
+    height: 80vh;
+    margin-left: 60px;
+    text-align: center;
+    background-color: #FF4949;
+    padding: 4rem;
+    box-sizing: border-box;
+    box-shadow: 1px 6px 10px 1px #0c1052c9;
+    border-radius: 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ .contentWrapper::-webkit-scrollbar {
+     width: 16px;
+     color: black;
+ }
+ 
+ .contentWrapper::-webkit-scrollbar-track {
+     box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+     border-radius: 10px;
+ }
+ 
+ .contentWrapper::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+ }
+
+.headingWrapper{
+    width: 40%;
+    height: 10vh;
+    margin: auto;
+    font-size: 13px;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #0c1052c9;
+}
+
+.listWrapper{
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    margin: 4rem 2rem;
+}
+
+.addWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.addWrapper input{
+    width: 25rem;
+    height: 3vh;
+    display: block;
+    padding: 6px;
+    border: 1px solid #0c1052c9;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px 0px 0px 10px;
+    color: #007f4f;
+    font-size: 13px;
+}
+
+.button{
+    width: 5rem;
+    height: 5vh;
+    display: inline-block;
+    padding: 6px;
+    color: #313131;
+    font-size: 13px;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    box-sizing: border-box;
+    border-color:yellow;
+    border-radius: 2px;   
+    padding: 3px;  
+}
+
+.list p{
+    height: 3vh;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.listButton{
+    width: auto;
+    height: 2rem;
+    padding: 3px;
+    margin: 3px;
+    background-color: rgba(255, 255, 0, 0.808);   
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.deleteButton{
+    width: auto;
+    height: 2rem;
+    padding: 3px;
+    margin: 3px;
+    margin-top: 10px;
+    background-color:#00F9FD;
+    color: black;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+

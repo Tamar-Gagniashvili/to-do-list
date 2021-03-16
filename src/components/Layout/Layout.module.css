@@ -6,7 +6,7 @@ header{
     display: flex;
     flex-direction:row;
     margin: 0px;
-    background-color: #101357;
+    background-color: #04051a;
     box-sizing: border-box;
     color: white;
     font-family: "BPG Glaho", sans-serif;
@@ -29,8 +29,12 @@ nav{
 }
 
 .content{
-    width: 100%;
-    
+    width: 100%;   
+}
+
+.layout{
+    margin: 0px;
+    padding: 0px;
 }
 
    

@@ -1,4 +1,4 @@
-import classes from './Main.css'
+import classes from './Main.module.css'
 
 function Main() {
     return (
@@ -8,11 +8,20 @@ function Main() {
                     <h1>ის რაც უნდა შეასრულო!</h1>
                 </div>
                 <div className={classes.listWrapper}>
-                    <input type="text" placeholder="დაამატე..."><button>დამატება</button></input>
+                    <div className={classes.addWrapper}>
+                        <input type="text" placeholder="დაამატე..." />
+                        <button className={classes.button}>დამატება</button>
+                    </div>
+
                     <div className={classes.list}>
                         <p>ისწავლე რეაქტი</p>
-                        <button>შესრულებულია</button>
-                        <button>წაშლა</button>
+                        <button className={classes.listButton}>შესრულებულია</button>
+                        <button className={classes.deleteButton}>წაშლა</button>
+                    </div>
+                    <div className={classes.list}>
+                        <p>ისწავლე რეაქტი</p>
+                        <button className={classes.listButton}>შესრულებულია</button>
+                        <button className={classes.deleteButton}>წაშლა</button>
                     </div>
                 </div>
             </div>

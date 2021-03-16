@@ -1,18 +1,12 @@
 body{
   /* background-color:  #59253A; */
   font-family: "ALK Life", sans-serif;
-  background-color: white;
   margin: 0px;
-  background-image:url('https://cdn.dribbble.com/users/1055435/screenshots/5714265/lightbulb-desk.gif');
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position-x: right;
-  background-position-y: bottom;
+  
   /* background-image: linear-gradient(to bottom, rgba(266, 173, 181, 0.2), rgba(266, 173, 181, 0.7)); */
 }
 
 .App{
-  
 }
 /* 
 body{

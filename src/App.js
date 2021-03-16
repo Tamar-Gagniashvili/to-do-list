@@ -12,10 +12,11 @@ function App() {
     <div className="App">
         <Layout>
           <Switch>
-            {/* <Route path='/' exact component={Signin}/>
-            <Route path='/signup' component={Signup}/>*/}
+            <Route path='/' exact component={Signin}/>
+            <Route path='/signup' component={Signup}/>
+            
+            {/* <Route path='/' exact component={Main} /> */}
             <Redirect to='/' /> 
-            <Route path='/' exact component={Main} />
           </Switch>
         </Layout>
     </div>
