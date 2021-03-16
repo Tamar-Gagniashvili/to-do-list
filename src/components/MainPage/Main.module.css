@@ -75,8 +75,9 @@ h1{
 
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px 0px 0px 10px;
-    color: #007f4f;
+    color: black;
     font-size: 13px;
+    font-weight: bold;
 }
 
 .button{
@@ -88,10 +89,12 @@ h1{
     font-size: 13px;
     background-color: white;
     border-radius: 0px 10px 10px 0px;
+    outline: none;
 }
 
-.button:hover{
+button:hover{
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .list{

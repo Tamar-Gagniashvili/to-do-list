@@ -8,6 +8,8 @@ import Main from './components/MainPage/Main'
 import 'alk-life'
 
 function App() {
+
+
   return (
     <div className="App">
         <Layout>

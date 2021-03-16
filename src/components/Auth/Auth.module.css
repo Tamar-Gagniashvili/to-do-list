@@ -64,3 +64,10 @@
     background-position-y: center;
     background-clip:inherit(20px 30px 10px 0px);
 }
+
+.auth ul{
+    list-style-type: none;
+    color: white;
+    font-size: 17px;
+    margin-left: 19px;
+}

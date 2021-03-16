@@ -37,4 +37,21 @@ nav{
     padding: 0px;
 }
 
+.logo{
+    height: auto;
+    margin-left: 40px;
+}
+
+.logo img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.logo p{
+    font-size: 15px;
+    font-family: "ALK Life", sans-serif;
+    display: inline-block;
+    padding: 8px 8px 15px 8px;
+}
+
    
