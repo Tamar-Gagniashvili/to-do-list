@@ -15,9 +15,8 @@ function App() {
         <Layout>
           <Switch>
             <Route path='/' exact component={Signin}/>
-            <Route path='/signup' component={Signup}/>
-            
-            {/* <Route path='/' exact component={Main} /> */}
+            <Route path='/signup' component={Signup}/>           
+            <Route path='/main' exact component={Main} />
             <Redirect to='/' /> 
           </Switch>
         </Layout>

@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { useHistory }  from 'react-router-dom';
+import * as actions from '../../store/index';
 import { checkValidity } from '../../shared/InputTools'
 
 import classes from './Auth.module.css';
@@ -6,7 +9,7 @@ import classes from './Auth.module.css';
 
 
 
-function Signin() {
+function Signin(props) {
     const [messages, setMessages] = useState([]);
     const [inputData, setInputData] = useState({
         email: '',
@@ -22,6 +25,8 @@ function Signin() {
 
     }
 
+    const history = useHistory();
+
 
     const sumbitHandler = (event) => {
         event.preventDefault();
@@ -33,8 +38,8 @@ function Signin() {
             if (messages.length > 0) {
                 setMessages([]);
             }
+            props.onSignIn(inputData.email, inputData.password, ()=>{history.push('/main')})
         }
-        console.log(msgs)
     }
 
     let errMessage = null;
@@ -77,7 +82,21 @@ function validation(email, password) {
 }
 
 
+export const mapStateToProps = (state) => {
+    return{
+        error: state.auth.error,
+        loading: state.auth.error
+    }
+}
 
-export default Signin;
+export const mapDispatchToProps = (dispatch) => {
+    return{
+        onSignIn: (email, password, onSuccess)=> dispatch(actions.signin(email, password, onSuccess))
+    }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signin);
 
 

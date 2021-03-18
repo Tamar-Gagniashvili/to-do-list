@@ -19,7 +19,7 @@ function Main() {
                 value: task,
                 isCompleted: false
             }
-
+            setTask('');
             setTaskList([...taskList, taskDetails]);
         }
     }

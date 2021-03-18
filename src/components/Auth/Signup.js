@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import {useHistory} from 'react-router-dom'
+import { connect } from 'react-redux';
+import * as actions from '../../store/index';
 
 import classes from './Auth.module.css';
 import { checkValidity } from '../../shared/InputTools'
 
 
-function Signup() {
+function Signup(props) {
     const [messages, setMessages] = useState([]);
     const [inputData, setInputData] = useState({
         email: '',
@@ -18,6 +21,8 @@ function Signup() {
         setInputData({ ...inputData, [name]: value });
     }
 
+    const history = useHistory();
+
 
 
     const signupHandler = (event) => {
@@ -29,6 +34,7 @@ function Signup() {
             if (messages.length > 0) {
                 setMessages([]);
             }
+            props.onSignup(inputData.email,inputData.password, ()=>{history.push('/main')});
         }
     }
 
@@ -50,6 +56,7 @@ function Signup() {
                 <button className={classes.button} onClick={signupHandler}>რეგისტრაცია</button>
                 <ul>
                     {errMessage}
+                    {props.error ?  <li>Authorisation Failed</li> : null} 
                 </ul>
             </div>
         </div>
@@ -70,4 +77,18 @@ function validateSignup(email, password, repeatPassword) {
     return msgs;
 }
 
-export default Signup;
+export const mapStateToProps = (state) => {
+    return{
+        error: state.auth.error,
+        loading: state.auth.error
+    }
+}
+
+export const mapDispatchToProps = (dispatch) => {
+    return{
+        onSignup: (email, password, onSuccess)=> dispatch(actions.signup(email, password, onSuccess))
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Signup);
