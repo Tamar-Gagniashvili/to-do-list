@@ -71,6 +71,19 @@ const signupFail = (state, action) =>{
 }
 
 
+////////////////////////////////Log out ////////////////////////
+////////////////////////////////Log out ////////////////////////
+////////////////////////////////Log out ////////////////////////
+////////////////////////////////Log out ////////////////////////
+
+const authLogout=(state, action)=> {
+    return{
+        ...state,
+        token: null,
+        userId: null
+    }
+}
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
@@ -86,6 +99,8 @@ const reducer = (state = initialState, action) => {
             return signupSuccess(state, action);
         case actionTypes.SIGN_UP_FAIL:
             return signupFail(state, action);
+        case actionTypes.AUTH_LOGOUT:
+            return authLogout(state, action);
         default:
             return state;
     }

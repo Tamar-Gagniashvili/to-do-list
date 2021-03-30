@@ -1,0 +1,11 @@
+{
+    "signin":"Sign In",
+    "signup": "Sign Up",
+    "logout": "Log Out",
+    "email": "E-mail",
+    "password": "Password",
+    "repeatPassword":"Repeat Password",
+    "add": "Add",
+    "Add": "Add",
+    "todolist": "To Do List"
+}

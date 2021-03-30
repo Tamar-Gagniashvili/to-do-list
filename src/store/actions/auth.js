@@ -2,14 +2,14 @@ import * as actionTypes from '../actionTypes';
 import axios from 'axios';
 
 
-export const signinStart= () => {
-    return{
+export const signinStart = () => {
+    return {
         type: actionTypes.SIGN_IN_START
     }
 }
 
 export const signinSuccess = (token, userId) => {
-    return{
+    return {
         type: actionTypes.SIGN_IN_SUCCESS,
         token: token,
         userId: userId
@@ -17,7 +17,7 @@ export const signinSuccess = (token, userId) => {
 }
 
 export const signinFail = (err) => {
-    return{
+    return {
         type: actionTypes.SIGN_IN_FAIL,
         error: err
     }
@@ -28,23 +28,22 @@ export const signinFail = (err) => {
 export const signin = (email, password, onSuccess) => {
     return dispatch => {
         dispatch(signinStart());
-        const data= {
+        const data = {
             email: email,
             password: password,
             returnSecureToken: true
         }
-        console.log(data)
         axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBAWvYS6FPTbtm3CBStHyTNg-T8hTTjExw', data)
-        .then(response => {
-            localStorage.setItem('token', response.data.idToken)
-            localStorage.setItem('userId', response.data.localId)
-            onSuccess();
-            dispatch(signinSuccess(response.data.idToken,response.data.localId))
-        })
-        .catch(err => {
-            console.log(err);
-            dispatch(signinFail(err))
-        })
+            .then(response => {
+                localStorage.setItem('token', response.data.idToken)
+                localStorage.setItem('userId', response.data.localId)
+                onSuccess();
+                dispatch(signinSuccess(response.data.idToken, response.data.localId))
+            })
+            .catch(err => {
+                console.log(err);
+                dispatch(signinFail(err))
+            })
 
     }
 }
@@ -54,14 +53,14 @@ export const signin = (email, password, onSuccess) => {
 ///////////////////////////sign up//////////////////////////////////////
 ///////////////////////////sign up//////////////////////////////////////
 
-export const signupStart=()=>{
-        return{
-            type: actionTypes.SIGN_UP_START
-        }
+export const signupStart = () => {
+    return {
+        type: actionTypes.SIGN_UP_START
+    }
 }
 
 export const signupSuccess = (token, userId) => {
-    return{
+    return {
         type: actionTypes.SIGN_UP_SUCCESS,
         // token: token,
         token,
@@ -69,8 +68,8 @@ export const signupSuccess = (token, userId) => {
     }
 }
 
-export const signupFail = (err) =>{
-    return{
+export const signupFail = (err) => {
+    return {
         type: actionTypes.SIGN_UP_FAIL,
         error: err
     }
@@ -79,23 +78,46 @@ export const signupFail = (err) =>{
 
 
 export const signup = (email, password, onSuccess) => {
-    return dispatch =>{
+    return dispatch => {
         dispatch(signupStart());
-        const data= {
+        const data = {
             email: email,
             password: password,
             returnSecureToken: true
         }
         axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBAWvYS6FPTbtm3CBStHyTNg-T8hTTjExw', data)
-        .then(response =>{
-            localStorage.setItem('token', response.data.idToken)
-            localStorage.setItem('userId', response.data.localId)
-            onSuccess();
-            dispatch(signupSuccess(response.data.idToken, response.data.localId))
-        })
-        .catch(err => {
-            dispatch(signupFail(err))
-        })
+            .then(response => {
+                localStorage.setItem('token', response.data.idToken)
+                localStorage.setItem('userId', response.data.localId)
+                onSuccess();
+                dispatch(signupSuccess(response.data.idToken, response.data.localId))
+            })
+            .catch(err => {
+                dispatch(signupFail(err))
+            })
     }
-} 
+}
+
+
+
+///////////////////////////////////////Log out /////////////////////////////
+///////////////////////////////////////Log out /////////////////////////////
+///////////////////////////////////////Log out /////////////////////////////
+///////////////////////////////////////Log out /////////////////////////////
+
+export const logout = () => {
+    return {
+        type: actionTypes.AUTH_LOGOUT
+    }
+}
+
+export const authLogout = () => {
+    return dispatch => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        dispatch(logout());
+    }
+}
+
+
 

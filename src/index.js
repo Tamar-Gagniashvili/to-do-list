@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import './i18n';
 import { BrowserRouter } from 'react-router-dom'
 //for routing npm install react-router-dom --save
 //npm install redux react-redux redux-thunk --save
@@ -6,9 +7,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
-import { Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import authReducer from './store/reducers/auth';
+import todoReducer from './store/reducers/toDo';
+
 
 
 const composeEnhancers =
@@ -19,7 +22,8 @@ const composeEnhancers =
 
 const rootReducer = combineReducers(
   {
-    auth: authReducer
+    auth: authReducer,
+    todo: todoReducer
   }
 );
 
@@ -28,10 +32,12 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+      <BrowserRouter>
+        <Suspense fallback='Loading...'>
+          <App />
+        </Suspense>
+      </BrowserRouter>
+    </React.StrictMode>
   </Provider>,
   document.getElementById('root')
 );

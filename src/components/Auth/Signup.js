@@ -2,12 +2,14 @@ import { useState } from 'react';
 import {useHistory} from 'react-router-dom'
 import { connect } from 'react-redux';
 import * as actions from '../../store/index';
+import {useTranslation} from 'react-i18next';
 
 import classes from './Auth.module.css';
 import { checkValidity } from '../../shared/InputTools'
 
 
 function Signup(props) {
+    const { t } =useTranslation();
     const [messages, setMessages] = useState([]);
     const [inputData, setInputData] = useState({
         email: '',
@@ -50,10 +52,10 @@ function Signup(props) {
     return (
         <div className={classes.authWrapper}>
             <div className={classes.auth}>
-                <input type='email' placeholder='ელ.ფოსტა' value={inputData.email} name="email" onChange={changeHandler} />
-                <input type='password' placeholder='პაროლი' value={inputData.password} name="password" onChange={changeHandler} />
-                <input type='password' placeholder='გაიმეორეთ პაროლი' value={inputData.repeatPassword} name="repeatPassword" onChange={changeHandler} />
-                <button className={classes.button} onClick={signupHandler}>რეგისტრაცია</button>
+                <input type='email' placeholder={t("email")} value={inputData.email} name="email" onChange={changeHandler} />
+                <input type='password' placeholder={t("password")} value={inputData.password} name="password" onChange={changeHandler} />
+                <input type='password' placeholder={t("repeatPassword")} value={inputData.repeatPassword} name="repeatPassword" onChange={changeHandler} />
+                <button className={classes.button} onClick={signupHandler}>{t("signup")}</button>
                 <ul>
                     {errMessage}
                     {props.error ?  <li>Authorisation Failed</li> : null} 
@@ -80,7 +82,7 @@ function validateSignup(email, password, repeatPassword) {
 export const mapStateToProps = (state) => {
     return{
         error: state.auth.error,
-        loading: state.auth.error
+        loading: state.auth.loading
     }
 }
 

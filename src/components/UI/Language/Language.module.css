@@ -1,0 +1,19 @@
+.Language{
+    margin-right: 40px;
+    margin-top: 8px;
+}
+
+.Language button{
+    width: 3rem;
+    height: 2rem;
+    border-style: hidden;
+    background-color: #04051a;
+    color: white;
+    border-style: none;
+    border-radius: 3px;
+    font-size: 13px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+

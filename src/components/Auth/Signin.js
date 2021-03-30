@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { useHistory }  from 'react-router-dom';
 import * as actions from '../../store/index';
 import { checkValidity } from '../../shared/InputTools'
+import {useTranslation} from 'react-i18next';
 
 import classes from './Auth.module.css';
 
 
-
-
 function Signin(props) {
+    const { t } =useTranslation();
     const [messages, setMessages] = useState([]);
     const [inputData, setInputData] = useState({
         email: '',
@@ -30,7 +30,6 @@ function Signin(props) {
 
     const sumbitHandler = (event) => {
         event.preventDefault();
-        // const msgs = validation(inputData.email, inputData.password);
         const msgs = validation(inputData.email, inputData.password);
         if (msgs.length > 0) {
             setMessages(msgs);
@@ -56,9 +55,9 @@ function Signin(props) {
     return (
         <div className={classes.authWrapper}>
             <div className={classes.auth}>
-                <input type='email' placeholder='ელ.ფოსტა' value={inputData.email} name="email" onChange={changeHandler} />
-                <input type='password' placeholder='პაროლი' value={inputData.password} name="password" onChange={changeHandler} />
-                <button className={classes.button} onClick={sumbitHandler}>შესვლა</button>
+                <input type='email' placeholder={t("email")} value={inputData.email} name="email" onChange={changeHandler} />
+                <input type='password' placeholder={t("password")} value={inputData.password} name="password" onChange={changeHandler} />
+                <button className={classes.button} onClick={sumbitHandler}>{t("signin")}</button>
                 <ul>
                     {errMessage}
                 </ul>
@@ -85,7 +84,7 @@ function validation(email, password) {
 export const mapStateToProps = (state) => {
     return{
         error: state.auth.error,
-        loading: state.auth.error
+        loading: state.auth.loading
     }
 }
 
